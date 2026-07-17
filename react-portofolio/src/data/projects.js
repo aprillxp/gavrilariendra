@@ -65,4 +65,10 @@ export const projects = [
     tech: ['Jquery', 'Express JS', 'PostgreSQL', 'AWS'],
     github: 'https://github.com/aprillxp/Maryjane-CMS',
   },
+  {
+    title: 'PattyPatty - Mobile Food Ordering App (UI/UX Design)',
+    description:
+      'An independently designed mobile food ordering application created in Figma, featuring a complete end-to-end user experience from onboarding to checkout. ',
+    tech: ['Figma', 'UI Design', 'Prototyping', 'Design System', 'Auto Layout'],
+  },
 ];
