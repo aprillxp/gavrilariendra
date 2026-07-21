@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-export const userIntersectionObserver = () => {
+export const useIntersectionObserver = () => {
   const [hasAnimated, setHasAnimated] = useState({});
+
   useEffect(() => {
-    const observer = new userIntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated[entry.target.id]) {
@@ -19,7 +20,7 @@ export const userIntersectionObserver = () => {
     document.querySelectorAll('[id]').forEach((el) => observer.observe(el));
 
     return () => {
-      observer.disconncet();
+      observer.disconnect();
     };
   }, [hasAnimated]);
 
