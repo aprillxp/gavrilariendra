@@ -1,3 +1,4 @@
+import { Menu, X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 export const Navigation = () => {
@@ -54,7 +55,7 @@ export const Navigation = () => {
             Portofolio
           </div>
 
-          <div className="hidden md:flex">
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -68,6 +69,32 @@ export const Navigation = () => {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          <button
+            onClick={toggleMobileMenu}
+            className={`md:hidden p-2 transition-colors cursor-pointer ${isScrolled ? 'text-gray-600 hover:text-black' : 'text-gray-700 hover:text-black'}`}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-64 opacity-100 mt-4' : 'opacity-0 overflow-hidden'}`}
+        >
+          <div className="bg-white border border-gray-100 rounded-xl shadow-lg p-4 space-y-4">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
+                className="block text-gray-600 hover:text-black transition-colors py-2"
               >
                 {item.label}
               </a>
