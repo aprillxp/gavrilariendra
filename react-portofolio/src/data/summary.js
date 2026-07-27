@@ -1,6 +1,6 @@
 export const summary = {
-  greeting: 'Helooooow there',
-  name: 'Avril is here',
+  greeting: `Helloooow there~  I'm`,
+  name: 'Gavrila Ariendra',
   roles: ['Software Engineer', 'Graphic Designer', 'Video Editor'],
   description:
     'Just a developer who loves building cool stuff on the web. I enjoy turning ideas into complete digital experiences, from what users see and interact with to everything that keeps it running behind the scenes',
